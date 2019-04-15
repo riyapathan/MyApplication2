@@ -52,7 +52,7 @@ public class GenderActivity extends AppCompatActivity
 
     }
 
-    /*private void onRadioButtonClicked(View view)
+    private void onRadioButtonClicked(View view)
     {
         String gender="";
         boolean checked = ((RadioButton) view).isChecked();
@@ -73,7 +73,7 @@ public class GenderActivity extends AppCompatActivity
                 }
                     break;
         }
-    }*/
+    }
 
 
 }
