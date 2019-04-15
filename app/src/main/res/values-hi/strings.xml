@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="firstname">पहला नाम</string>
+    <string name="lastname">उपनाम</string>
+    <string name="back">वापस</string>
+    <string name="next">अगला</string>
+
+    <string name="gender">लिंग</string>
+    <string name="female">महिला</string>
+    <string name="male">पुरुष</string>
+
+    <string name="selectdob">जन्म तिथि चुनें</string>
+    <string name="comment">टिप्पणी</string>
+    <string name="Writesomething">कुछ लिखो</string>
+    <string name="register">रजिस्टर</string>
+</resources>

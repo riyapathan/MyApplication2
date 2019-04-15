@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+
+    <string name="gender">Gender</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+
+    <string name="selectdob">Select DOB</string>
+    <string name="comment">Comment</string>
+    <string name="Writesomething">Write Something..</string>
+    <string name="register">Register</string>
+</resources>
