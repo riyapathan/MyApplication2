@@ -4,8 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.view.View;
-import android.widget.Toast;
 
 
 public class DatabaseHelper extends SQLiteOpenHelper
@@ -41,12 +39,13 @@ public class DatabaseHelper extends SQLiteOpenHelper
         onCreate(db);
     }
 
-    public boolean insertData(String firstname,String lastname,String gender,String date,String comment)
+    public boolean insertData(String first_name, String last_name, String gender, String date, String comment)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2,firstname);
-        contentValues.put(COL_3,lastname);
+
+        contentValues.put(COL_2,first_name);
+        contentValues.put(COL_3,last_name);
         contentValues.put(COL_4,gender);
         contentValues.put(COL_5,date);
         contentValues.put(COL_6,comment);

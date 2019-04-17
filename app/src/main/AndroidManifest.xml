@@ -9,13 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DOB_Comment"></activity>
-        <activity android:name=".GenderActivity"
+        <activity android:name=".DOB_Comment"
             android:exported="true"
+            android:alwaysRetainTaskState="true"
             />
-        <activity android:name=".UsernameActivity"
+
+        <activity
+            android:name=".GenderActivity"
             android:exported="true"
+            android:alwaysRetainTaskState="true"
             />
+
+
+        <activity
+            android:name=".UsernameActivity"
+            android:exported="true"
+            android:alwaysRetainTaskState="true"
+            />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

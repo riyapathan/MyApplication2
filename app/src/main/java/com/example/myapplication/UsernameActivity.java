@@ -9,8 +9,13 @@ import android.widget.EditText;
 
 public class UsernameActivity extends AppCompatActivity
 {
+
+
     Button back,next;
-    EditText firstname,lastname;
+    static EditText firstname;
+    static EditText lastname;
+    static String fname;
+    static String lname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -23,6 +28,7 @@ public class UsernameActivity extends AppCompatActivity
 
         firstname=(EditText)findViewById(R.id.editFirstname);
         lastname=(EditText)findViewById(R.id.editLastname);
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,16 +44,48 @@ public class UsernameActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                String fname=firstname.getText().toString();
-                String lname=lastname.getText().toString();
+                 fname=firstname.getText().toString();
+
+                lname=lastname.getText().toString();
+
+
 
                 Intent i2=new Intent(getApplicationContext(),GenderActivity.class);
-               i2.putExtra("firstname",fname);
-               i2.putExtra("lastname",lname);
+
                 startActivity(i2);
+
+
             }
         });
 
 
+    }
+
+    public void onActivityResult(int requestCode,int resultCode,Intent data)
+    {
+        super.onActivityResult(requestCode,resultCode,data);
+
+        if(requestCode==1)
+        {
+            if(resultCode==RESULT_OK)
+            {
+                firstname.setText(fname);
+                lastname.setText(lname);
+            }
+        }
+    }
+
+    //set and get firstname and lastname
+
+    public static String setFirstname()
+    {
+
+        return fname;
+    }
+
+    public static String setLastname()
+    {
+
+        return lname;
     }
 }

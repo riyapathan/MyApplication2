@@ -6,37 +6,35 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.Toast;
+import android.widget.RadioGroup;
 
 public class GenderActivity extends AppCompatActivity
 {
+    RadioGroup rg;
     Button back,next;
     RadioButton rd_female,rd_male;
+    static String gender="";
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gender);
+
+
         back=(Button)findViewById(R.id.Back2);
         next=(Button)findViewById(R.id.Next2);
 
-        rd_female=(RadioButton)findViewById(R.id.radiofemale);
-        rd_male=(RadioButton)findViewById(R.id.radiomale);
-        Bundle bundle=null;
-        bundle=getIntent().getExtras();
 
-        if(bundle!=null)
-        {
-            Toast.makeText(GenderActivity.this, "Data Passed", Toast.LENGTH_LONG).show();
-        }
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                onBackPressed();
-                Intent i1=new Intent(getBaseContext(),UsernameActivity.class);
-                startActivity(i1);
+
+                Intent i3=new Intent(getBaseContext(),UsernameActivity.class);
+                Bundle extra=new Bundle();
+                setResult(RESULT_OK);
+                startActivity(i3);
             }
         });
 
@@ -45,16 +43,23 @@ public class GenderActivity extends AppCompatActivity
             public void onClick(View v)
             {
 
-                Intent i2=new Intent(getBaseContext(),DOB_Comment.class);
-                startActivity(i2);
+                Intent i4=new Intent(GenderActivity.this,DOB_Comment.class);
+
+                startActivity(i4);
+
+
             }
         });
 
+
+
+
+
     }
 
-    private void onRadioButtonClicked(View view)
+   private void onRadioButtonClicked(View view)
     {
-        String gender="";
+
         boolean checked = ((RadioButton) view).isChecked();
 
         // Check which radio button was clicked
@@ -65,14 +70,22 @@ public class GenderActivity extends AppCompatActivity
                     gender=rd_female.getText().toString();
                 }
 
-                    break;
+                break;
             case R.id.radiomale:
                 if (checked)
                 {
                     gender=rd_male.getText().toString();
                 }
-                    break;
+                break;
         }
+
+
+
+    }
+
+    public static String mygender()
+    {
+        return gender;
     }
 
 
