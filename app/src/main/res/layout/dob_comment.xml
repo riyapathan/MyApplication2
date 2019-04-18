@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:baselineAligned="false">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#d4d4d4"
+        android:hint="Select DOB"
+        android:padding="10dp"
+        android:textColor="#897"
+        android:textColorHint="#090"
+        android:textSize="20sp"
+        android:textStyle="bold"
+
+        />
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textcmnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date"
+        android:text="Comment"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/editComment"
+        android:layout_below="@+id/textcmnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Write Something..."
+        android:inputType="textPersonName" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        android:id="@+id/button_add"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/editComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register" />
+
+
+
+    </RelativeLayout>
+
+    <fragment
+        android:layout_below="@id/button_add"
+        android:id="@+id/fragment2"
+        android:name="com.example.myapplication.DOB_Comment_fragment2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+    </fragment>
+
+</LinearLayout>

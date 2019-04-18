@@ -7,10 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class GenderActivity extends AppCompatActivity
 {
-    RadioGroup rg;
+    RadioGroup radiogroup;
     Button back,next;
     RadioButton rd_female,rd_male;
     static String gender="";
@@ -20,7 +21,18 @@ public class GenderActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gender);
 
+        RadioGroup radiogroup=(RadioGroup)findViewById(R.id.rg);
+        radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+                RadioButton radioButton=(RadioButton)findViewById(checkedId);
+               gender=radioButton.getText().toString();
+                Toast.makeText(GenderActivity.this, "You Select :"+gender, Toast.LENGTH_LONG).show();
 
+
+            }
+        });
         back=(Button)findViewById(R.id.Back2);
         next=(Button)findViewById(R.id.Next2);
 
@@ -57,31 +69,6 @@ public class GenderActivity extends AppCompatActivity
 
     }
 
-   private void onRadioButtonClicked(View view)
-    {
-
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.radiofemale:
-                if (checked)
-                {
-                    gender=rd_female.getText().toString();
-                }
-
-                break;
-            case R.id.radiomale:
-                if (checked)
-                {
-                    gender=rd_male.getText().toString();
-                }
-                break;
-        }
-
-
-
-    }
 
     public static String mygender()
     {

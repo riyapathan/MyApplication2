@@ -17,20 +17,19 @@ import java.util.Calendar;
 
 public class DOB_Comment extends AppCompatActivity
 {
-    DatabaseHelper myDb=new DatabaseHelper(this);
-    EditText birthdate,comments;
+    DatabaseHelper myDb = new DatabaseHelper(this);
+    EditText birthdate, comments;
     DatePickerDialog datePickerDialog;
     Button register;
-    String B_date,cmnt;
+    String B_date, cmnt;
 
 
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dob__comment);
+        setContentView(R.layout.dob_comment);
 
         // initiate the date picker and a button and edit text
-        birthdate = (EditText) findViewById(R.id.date);
+       birthdate = (EditText) findViewById(R.id.date);
         comments = (EditText) findViewById(R.id.editComment);
         register = (Button) findViewById(R.id.button_add);
 
@@ -94,4 +93,4 @@ public class DOB_Comment extends AppCompatActivity
     }
 
 
-}
+    }
